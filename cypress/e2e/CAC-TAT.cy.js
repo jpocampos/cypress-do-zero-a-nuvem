@@ -152,7 +152,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
 // SEÇÃO 7
 
-  it.only('seleciona um arquivo da pasta fixtures', () => {
+  it('seleciona um arquivo da pasta fixtures', () => {
     cy.fixture('example.json', null).as('file')
     cy.get('input[type="file"]')
     .selectFile('@file')
@@ -161,7 +161,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })
   })
 
-  it.only('seleciona um arquivo simulando um drag-and-drop', () => {
+  it('seleciona um arquivo simulando um drag-and-drop', () => {
     cy.fixture('example.json', null).as('file')
     cy.get('input[type="file"]')
     .selectFile('@file', { action: 'drag-drop'})
@@ -170,7 +170,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })
   })
 
-  it.only('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+  it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
     cy.fixture('example.json', null).as('file')
     cy.get('input[type="file"]')
       .selectFile('@file')
@@ -181,7 +181,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
 // SEÇÃO 8
 
-  it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+  it.only('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
     cy.contains('a', 'Política de Privacidade')
     .should('have.attr', 'href', 'privacy.html')
     .and('have.attr', 'target', '_blank')
@@ -193,6 +193,9 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     .invoke('removeAttr', 'target')
     .click()
   })
+  
+// SEÇÃO 9
 
+// SEÇÃO 10
 })
 
